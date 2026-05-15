@@ -90,7 +90,8 @@ async def post_init(application):
     # runs at 8:20 AM Lithuania time (UTC+3 = 05:20 UTC)
     application.job_queue.run_daily(
         morning_update,
-        time=__import__("datetime").time(5, 20, tzinfo=__import__("datetime").timezone.utc)
+        time=__import__("datetime").time(5, 20, tzinfo=__import__("datetime").timezone.utc),
+        days=(0, 1, 2, 3)
     )
 
 app = ApplicationBuilder().token(os.getenv("TELEGRAM_BOT_TOKEN")).post_init(post_init).build()
