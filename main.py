@@ -55,7 +55,7 @@ async def build_route_message():
     - Duration: {route_olandu['duration_min']} minutes
     - Distance: {route_olandu['distance_km']} km
 
-    Which route do you recommend and why? Be concise, 2-3 sentences max.
+    Which route do you recommend and why (4 mins difference doesn't matter much if the route is shorter)? Be concise, 2-3 sentences max.
     """
 
     response = gemini_api.models.generate_content(
